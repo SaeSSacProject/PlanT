@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlanT_Event : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static void Enable()
     {
-        
+        EventSystem system = FindFirstObjectByType<EventSystem>();
+
+        system.enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void Disable()
     {
-        
+        EventSystem system = FindFirstObjectByType<EventSystem>();
+
+        system.enabled = false;
     }
 }

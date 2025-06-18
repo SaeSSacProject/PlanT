@@ -1,16 +1,33 @@
 using UnityEngine;
 
-public class Resolution : MonoBehaviour
+public class Resolution
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float Width
     {
-        
+        get
+        {
+            if(_width == 0.0f)
+            {
+                _width = Screen.currentResolution.width;
+            }
+
+            return _width;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public float Height
     {
-        
+        get
+        {
+            if(_height == 0.0f)
+            {
+                _height = Screen.currentResolution.height;
+            }
+
+            return _height;
+        }
     }
+
+    private float _width = 0.0f;
+    private float _height = 0.0f;
 }
